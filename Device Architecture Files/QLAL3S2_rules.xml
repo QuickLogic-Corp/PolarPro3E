@@ -1,0 +1,787 @@
+G?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<RULES FamilyOrDevice="QLAL3S2">
+  <CELL_FRAG_INFO>
+    <INDIVIDUAL_FRAGS>
+      <CELL name="LOGIC">
+        <FRAG name="TFRAG">
+          <INPUT>
+            <PORT name="TA1" selectionPort="TAS1" />
+            <PORT name="TA2" selectionPort="TAS2" />
+            <PORT name="TB1" selectionPort="TBS1" />
+            <PORT name="TB2" selectionPort="TBS2" />
+            <PORT name="TAS1" />
+            <PORT name="TAS2" />
+            <PORT name="TBS1" />
+            <PORT name="TBS2" />
+            <PORT name="TSL" />
+            <PORT name="TAB" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="TZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+        <FRAG name="BFRAG">
+          <INPUT>
+            <PORT name="BA1" selectionPort="BAS1" />
+            <PORT name="BA2" selectionPort="BAS2" />
+            <PORT name="BB1" selectionPort="BBS1" />
+            <PORT name="BB2" selectionPort="BBS2" />
+            <PORT name="BAS1" />
+            <PORT name="BAS2" />
+            <PORT name="BBS1" />
+            <PORT name="BBS2" />
+            <PORT name="BSL" />
+            <PORT name="BAB" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="CZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+        <FRAG name="QFRAG">
+          <INPUT>
+            <PORT name="QST" />
+            <PORT name="QDS" />
+            <PORT name="QDI" />
+            <PORT name="QEN" />
+            <PORT name="QCK" selectionPort="QCKS" />
+            <PORT name="QCKS" />
+            <PORT name="QRT" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="QZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+        <FRAG name="FFRAG">
+          <INPUT>
+            <PORT name="F1" />
+            <PORT name="F2" />
+            <PORT name="FS" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="FZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="BIDIR">
+        <FRAG name="PFRAG">
+          <INPUT>
+            <PORT name="ESEL" />
+            <PORT name="IE" />
+            <PORT name="IQE" />
+            <PORT name="OSEL" />
+            <PORT name="OQI" />
+            <PORT name="OQE" />
+            <PORT name="FIXHOLD" />
+            <PORT name="IQCS" />
+            <PORT name="IQR" />
+            <PORT name="IQC" selectionPort="IQCS" />
+            <PORT name="INEN" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IQZ" realizeLocation="" />
+            <PORT name="IZ" realizeLocation="" />
+          </OUTPUT>
+          <BIDIR>
+            <PORT name="IP" />
+          </BIDIR>
+        </FRAG>
+      </CELL>
+      <CELL name="GND">
+        <FRAG name="GNDFRAG">
+          <INPUT>
+            <PORT name="IP" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="GND" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="VCC">
+        <FRAG name="VCCFRAG">
+          <INPUT>
+            <PORT name="IP" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="VCC" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="CAND">
+        <FRAG name="CANDFRAG">
+          <INPUT>
+            <PORT name="EN" />
+            <PORT name="IC" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="CLOCK">
+        <FRAG name="CLKFRAG">
+          <INPUT>
+            <PORT name="IP" />
+            <PORT name="CEN1" />
+            <PORT name="CEN2" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IC" realizeLocation="" />
+            <PORT name="OP" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="GMUX">
+        <FRAG name="GMUX_IP_FRAG">
+          <INPUT>
+            <PORT name="IP" />
+            <PORT name="IS0" />
+            <PORT name="IS1" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+        <FRAG name="GMUX_IC_FRAG">
+          <INPUT>
+            <PORT name="IC" />
+            <PORT name="IS0" />
+            <PORT name="IS1" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="QMUX">
+        <FRAG name="QMUX_CLKIN0_FRAG">
+          <INPUT>
+            <PORT name="QCLKIN0" />
+            <PORT name="IS0" />
+            <PORT name="IS1" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+        <FRAG name="QMUX_HSCKIN_FRAG">
+          <INPUT>
+            <PORT name="HSCKIN" />
+            <PORT name="IS0" />
+            <PORT name="IS1" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="IZ" realizeLocation="" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="RAM">
+        <FRAG name="RAMFRAG">
+          <INPUT type="input">
+            <PORT name="WD_0[17:0]" >
+              <bus name="WD_0" msb="17" lsb="0" step="1" />
+            </PORT>
+            <PORT name="FIFO_EN_0" />
+            <PORT name="SYNC_FIFO_0" />
+            <PORT name="CLK1EN_0" />
+            <PORT name="PIPELINE_RD_0" />
+            <PORT name="CLK1_0" />
+            <PORT name="CLK1S_0" />
+            <PORT name="CLK2_0" />
+            <PORT name="CLK2S_0" />
+            <PORT name="A1_0[10:0]" >
+              <bus name="A1_0" msb="10" lsb="0" step="1" />
+            </PORT>
+            <PORT name="CONCAT_EN_0" />
+            <PORT name="CLK2EN_0" />
+            <PORT name="ASYNC_FLUSH_0" />
+            <PORT name="ASYNC_FLUSH_S0" />
+            <PORT name="CS1_0" />
+            <PORT name="WEN1_0[1:0]" >
+              <bus name="WEN1_0" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="WIDTH_SELECT1_0[1:0]" >
+              <bus name="WIDTH_SELECT1_0" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="P2_0" />
+            <PORT name="P1_0" />
+            <PORT name="DIR_0" />
+            <PORT name="CS2_0" />
+            <PORT name="A2_0[10:0]" >
+                <bus name="A2_0" msb="10" lsb="0" step="1" />
+            </PORT>
+            <PORT name="WIDTH_SELECT2_0[1:0]" >
+              <bus name="WIDTH_SELECT2_0" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="WD_1[17:0]" >
+              <bus name="WD_1" msb="17" lsb="0" step="1" />
+            </PORT>
+            <PORT name="FIFO_EN_1"  />
+            <PORT name="SYNC_FIFO_1"  />
+            <PORT name="CLK1EN_1"  />
+            <PORT name="PIPELINE_RD_1"  />
+            <PORT name="CLK1_1"  />
+            <PORT name="CLK1S_1"  />
+            <PORT name="CLK2_1"  />
+            <PORT name="CLK2S_1"  />
+            <PORT name="A1_1[10:0]" >
+              <bus name="A1_1" msb="10" lsb="0" step="1" />
+            </PORT>
+            <PORT name="CONCAT_EN_1"  />
+            <PORT name="CLK2EN_1"  />
+            <PORT name="ASYNC_FLUSH_1"  />
+            <PORT name="ASYNC_FLUSH_S1"  />
+            <PORT name="WIDTH_SELECT1_1[1:0]" >
+              <bus name="WIDTH_SELECT1_1" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="CS1_1"  />
+            <PORT name="WEN1_1[1:0]" >
+              <bus name="WEN1_1" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="P2_1"  />
+            <PORT name="P1_1"  />
+            <PORT name="DIR_1"  />
+            <PORT name="CS2_1"  />
+            <PORT name="A2_1[10:0]" >
+              <bus name="A2_1" msb="10" lsb="0" step="1" />
+            </PORT>
+            <PORT name="WIDTH_SELECT2_1[1:0]" >
+              <bus name="WIDTH_SELECT2_1" msb="1" lsb="0" step="1" />
+            </PORT>
+          </INPUT>
+          <OUTPUT type="output">
+            <PORT name="PUSH_FLAG_0[3:0]" >
+              <bus name="PUSH_FLAG_0" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Almost_Full_0"  />
+            <PORT name="POP_FLAG_0[3:0]" >
+              <bus name="POP_FLAG_0" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Almost_Empty_0"  />
+            <PORT name="RD_0[17:0]" >
+              <bus name="RD_0" msb="17" lsb="0" step="1" />
+            </PORT>
+            <PORT name="PUSH_FLAG_1[3:0]"  >
+              <bus name="PUSH_FLAG_1" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Almost_Full_1"   />
+            <PORT name="POP_FLAG_1[3:0]" >
+              <bus name="POP_FLAG_1" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Almost_Empty_1"   />
+            <PORT name="RD_1[17:0]"  >
+              <bus name="RD_1" msb="17" lsb="0" step="1" />
+            </PORT>
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="ASSPL">
+        <FRAG name= "ASSPLFRAG">
+          <INPUT>
+            <PORT name="SPI_CLKS" />
+            <PORT name="RAM8K_P0_CLKS" />
+            <PORT name="RAM8K_P1_CLKS" />
+            <PORT name="RESET_nS" />
+            <PORT name="reg_clk_intS" />
+            <PORT name="RAM0_CLKS" />
+            <PORT name="SEL_18_top" />
+            <PORT name="SEL_18_bottom" />
+            <PORT name="SEL_18_left" />
+            <PORT name="SEL_18_right" />
+            <PORT name="SPI_CLK" />
+            <PORT name="default_SPI_IO_mux" />
+            <PORT name="SPI_SSn" />
+            <PORT name="SPI_MOSI" />
+            <PORT name="RAM8K_P1_mux" />
+            <PORT name="RAM8K_RM_af[3:0]">
+              <bus name="RAM8K_RM_af" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM8K_RME_af" />
+            <PORT name="RAM8K_P0_CLK" />
+            <PORT name="af_burnin_mode[3:0]">
+              <bus name="af_burnin_mode" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="osc_en" />
+            <PORT name="osc_fsel" />
+            <PORT name="osc_sel[2:0]">
+              <bus name="osc_sel" msb="2" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM8K_P0_WR_DATA[16:0]">
+              <bus name="RAM8K_P0_WR_DATA" msb="16" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM8K_P0_WR_BE[1:0]">
+              <bus name="RAM8K_P0_WR_BE" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="af_spi_cpha" />
+            <PORT name="af_spi_cpol" />
+            <PORT name="af_spi_lsbf" />
+            <PORT name="RAM8K_P0_WR_EN" />
+            <PORT name="RAM8K_TEST1_af" />
+            <PORT name="RAM8K_P0_ADDR[11:0]">
+              <bus name="RAM8K_P0_ADDR" msb="11" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM8K_P1_CLK" />
+            <PORT name="RAM8K_P1_ADDR[11:0]">
+              <bus name="RAM8K_P1_ADDR" msb="11" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM8K_P1_RD_EN" />
+            <PORT name="RESET_n" />
+            <PORT name="RAM8K_fifo_en" />
+            <PORT name="int_i[7:0]">
+              <bus name="int_i" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="reg_clk_int" />
+            <PORT name="reg_wr_en_int" />
+            <PORT name="reg_rd_en_int" />
+            <PORT name="reg_wr_data_int[7:0]">
+              <bus name="reg_wr_data_int" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="drive_io_en_4" />
+            <PORT name="drive_io_en_5" />
+            <PORT name="reg_addr_int[1:0]">
+              <bus name="reg_addr_int" msb="1" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_Status[6:0]">
+              <bus name="A2F_Status" msb="6" lsb="0" step="1" />
+            </PORT>
+            <PORT name="af_fpga_int_en" />
+            <PORT name="af_dev_id[31:0]">
+              <bus name="af_dev_id" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_GP_IN[7:0]">
+              <bus name="A2F_GP_IN" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_RD_DATA[7:0]">
+              <bus name="A2F_RD_DATA" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_ACK" />
+            <PORT name="Amult0[31:0]">
+              <bus name="Amult0" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="drive_io_en_2" />
+            <PORT name="drive_io_en_3" />
+            <PORT name="drive_io_en_0" />
+            <PORT name="drive_io_en_1" />
+            <PORT name="Bmult0[31:0]">
+              <bus name="Bmult0" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM0_CLK" />
+            <PORT name="Valid_mult0" />
+            <PORT name="af_opt_0" />
+            <PORT name="af_opt_1" />
+            <PORT name="RAM0_RM_af[3:0]">
+              <bus name="RAM0_RM_af" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM0_RME_af" />
+            <PORT name="af_plat_id[0]" />
+            <PORT name="af_plat_id[1]" />
+            <PORT name="af_plat_id[2]" />
+            <PORT name="af_plat_id[3]" />
+            <PORT name="af_plat_id[4]" />
+            <PORT name="af_plat_id[5]" />
+            <PORT name="af_plat_id[6]" />
+            <PORT name="af_plat_id[7]" />
+            <PORT name="RAM0_WR_DATA[35:0]">
+              <bus name="RAM0_WR_DATA" msb="35" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM0_WR_BE[3:0]">
+              <bus name="RAM0_WR_BE" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM0_RD_EN" />
+            <PORT name="RAM0_WR_EN" />
+            <PORT name="RAM0_TEST1_af" />
+            <PORT name="RAM0_ADDR[8:0]">
+              <bus name="RAM0_ADDR" msb="8" lsb="0" step="1" />
+            </PORT>
+          </INPUT>
+          <OUTPUT>
+            <PORT name="SPI_MISO" />
+            <PORT name="SPI_MISOe" />
+            <PORT name="RAM8K_P1_RD_DATA[16:0]">
+              <bus name="RAM8K_P1_RD_DATA" msb="16" lsb="0" step="1" />
+            </PORT>
+            <PORT name="SYSCLK_x2" />
+            <PORT name="SYSCLK" />
+            <PORT name="fast_clk_out" />
+            <PORT name="RAM8K_fifo_almost_full" />
+            <PORT name="RAM8K_fifo_full_flag[3:0]">
+              <bus name="RAM8K_fifo_full_flag" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM8K_fifo_almost_empty" />
+            <PORT name="RAM8K_fifo_empty_flag[3:0]">
+              <bus name="RAM8K_fifo_empty_flag" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name="int_o" />
+            <PORT name="reg_rd_data_int[7:0]">
+              <bus name="reg_rd_data_int" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_Control[7:0]">
+              <bus name="A2F_Control" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_GP_OUT[7:0]">
+              <bus name="A2F_GP_OUT" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_REQ" />
+            <PORT name="A2F_RWn" />
+            <PORT name="A2F_WR_DATA[7:0]">
+              <bus name="A2F_WR_DATA" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="A2F_ADDR[7:0]">
+              <bus name="A2F_ADDR" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Cmult0[63:0]">
+              <bus name="Cmult0" msb="63" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM0_RD_DATA[35:0]">
+              <bus name="RAM0_RD_DATA" msb="35" lsb="0" step="1" />
+            </PORT>
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+      <CELL name="ASSPR">
+        <FRAG name= "ASSPRFRAG">
+          <INPUT>
+            <PORT name= "RAM1_CLK" />
+            <PORT name="RAM1_RM_af[3:0]">
+              <bus name="RAM1_RM_af" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM1_RME_af" />
+            <PORT name="RAM1_WR_DATA[35:0]">
+              <bus name="RAM1_WR_DATA" msb="35" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM1_WR_BE[3:0]">
+              <bus name="RAM1_WR_BE" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM1_RD_EN" />
+            <PORT name= "RAM1_WR_EN" />
+            <PORT name= "RAM1_TEST1_af" />
+            <PORT name="RAM1_ADDR[8:0]">
+              <bus name="RAM1_ADDR" msb="8" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Amult1[31:0]">
+              <bus name="Amult1" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Bmult1[31:0]">
+              <bus name="Bmult1" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "wb_rst" />
+            <PORT name= "Valid_mult1" />
+            <PORT name="wb_adr[2:0]">
+              <bus name="wb_adr" msb="2" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "arst" />
+            <PORT name="wb_dat_i[7:0]">
+              <bus name="wb_dat_i" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "wb_we" />
+            <PORT name= "wb_stb" />
+            <PORT name= "wb_cyc" />
+            <PORT name= "rxack_stick_en_i" />
+            <PORT name= "rxack_clr_i" />
+            <PORT name= "al_stick_en_i" />
+            <PORT name= "RAM2_P0_CLK" />
+            <PORT name= "al_clr_i" />
+            <PORT name="RAM2_RM_af[3:0]">
+              <bus name="RAM2_RM_af" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM2_RME_af" />
+            <PORT name="RAM2_P0_WR_DATA[31:0]">
+              <bus name="RAM2_P0_WR_DATA" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM2_P0_WR_BE[3:0]">
+              <bus name="RAM2_P0_WR_BE" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM2_P0_WR_EN" />
+            <PORT name= "RAM2_TEST1_af" />
+            <PORT name="RAM2_P0_ADDR[8:0]">
+              <bus name="RAM2_P0_ADDR" msb="8" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "wb_clk" />
+            <PORT name="RAM2_P1_ADDR[8:0]">
+              <bus name="RAM2_P1_ADDR" msb="8" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM2_P1_CLK" />
+            <PORT name= "RAM2_P1_RD_EN" />
+            <PORT name= "RAM3_P0_CLK" />
+            <PORT name="RAM3_RM_af[3:0]">
+              <bus name="RAM3_RM_af" msb="3" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM3_RME_af" />
+            <PORT name="RAM3_P0_WR_DATA[31:0]">
+              <bus name="RAM3_P0_WR_DATA" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM3_P0_WR_EN" />
+            <PORT name= "RAM3_TEST1_af" />
+            <PORT name="RAM3_P0_ADDR[8:0]">
+              <bus name="RAM3_P0_ADDR" msb="8" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM3_P1_CLK" />
+            <PORT name="RAM3_P1_ADDR[8:0]">
+              <bus name="RAM3_P1_ADDR" msb="8" lsb="0" step="1" />
+            </PORT>
+            <PORT name= "RAM3_P1_RD_EN" />
+            <PORT name= "SDA_i" />
+            <PORT name= "SCL_i" />
+            <PORT name= "wb_rstS" />
+            <PORT name= "arstS" />
+            <PORT name= "RAM2_P0_CLKS" />
+            <PORT name= "wb_clkS" />
+            <PORT name= "RAM2_P1_CLKS" />
+            <PORT name= "RAM3_P0_CLKS" />
+            <PORT name= "RAM3_P1_CLKS" />
+            <PORT name= "RAM1_CLKS" />
+          </INPUT>
+          <OUTPUT>
+            <PORT name="RAM1_RD_DATA[35:0]">
+              <bus name="RAM1_RD_DATA" msb="35" lsb="0" step="1" />
+            </PORT>
+            <PORT name="Cmult1[63:0]">
+              <bus name="Cmult1" msb="63" lsb="0" step="1" />
+            </PORT>
+            <PORT name="wb_dat_o[7:0]">
+              <bus name="wb_dat_o" msb="7" lsb="0" step="1" />
+            </PORT>
+            <PORT name="wb_ack" />
+            <PORT name="wb_inta" />
+            <PORT name="rxack_o" />
+            <PORT name="al_o" />
+            <PORT name="tip_o" />
+            <PORT name="i2c_busy_o" />
+            <PORT name="RAM2_P1_RD_DATA[31:0]">
+              <bus name="RAM2_P1_RD_DATA" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="RAM3_P1_RD_DATA[31:0]">
+              <bus name="RAM3_P1_RD_DATA" msb="31" lsb="0" step="1" />
+            </PORT>
+            <PORT name="SDA_oen" />
+            <PORT name="SDA_o" />
+            <PORT name="SCL_oen" />
+            <PORT name="SCL_o" />
+            <PORT name="DrivingI2cBusOut" />
+          </OUTPUT>
+        </FRAG>
+      </CELL>
+    </INDIVIDUAL_FRAGS>
+    <COMPOSIT_FRAGS>
+      <CELL name="LOGIC">
+        <COMPOSIT_FRAG name="TBFRAG">
+          <FRAG name="TFRAG" />
+          <FRAG name="BFRAG" />
+        </COMPOSIT_FRAG>
+        <COMPOSIT_FRAG name="TQFRAG">
+          <FRAG name="TFRAG" />
+          <FRAG name="QFRAG" />
+        </COMPOSIT_FRAG>
+        <COMPOSIT_FRAG name="BQFRAG">
+          <FRAG name="BFRAG" />
+          <FRAG name="QFRAG" />
+        </COMPOSIT_FRAG>
+        <COMPOSIT_FRAG name="FQFRAG">
+          <FRAG name="FFRAG" />
+          <FRAG name="QFRAG" />
+        </COMPOSIT_FRAG>
+        <COMPOSIT_FRAG name="TBQFRAG">
+          <FRAG name="TFRAG" />
+          <FRAG name="BFRAG" />
+          <FRAG name="QFRAG" />
+        </COMPOSIT_FRAG>
+        <COMPOSIT_FRAG name="TBFQFRAG">
+          <FRAG name="TFRAG" />
+          <FRAG name="BFRAG" />
+          <FRAG name="FFRAG" />
+          <FRAG name="QFRAG" />
+        </COMPOSIT_FRAG>
+      </CELL>
+    </COMPOSIT_FRAGS>
+  </CELL_FRAG_INFO>
+  <CONVERSION_INFO>
+    <ONE_TO_ONE_CONVERSIONS>	    
+      <CONVERT sourceCell="LOGIC" sourceFrag="TFRAG" destinationCell="LOGIC" destinationFrag="BFRAG">
+        <MAP sourcePort="TA1" destinationPort="BA1" />
+        <MAP sourcePort="TA2" destinationPort="BA2" />
+        <MAP sourcePort="TB1" destinationPort="BB1" />
+        <MAP sourcePort="TB2" destinationPort="BB2" />
+        <MAP sourcePort="TAS1" destinationPort="BAS1" />
+        <MAP sourcePort="TAS2" destinationPort="BAS2" />
+        <MAP sourcePort="TBS1" destinationPort="BBS1" />
+        <MAP sourcePort="TBS2" destinationPort="BBS2" />
+        <MAP sourcePort="TSL" destinationPort="BSL" />
+        <MAP sourcePort="TAB" destinationPort="BAB" />
+        <MAP sourcePort="TZ" destinationPort="CZ" />
+      </CONVERT>
+      <CONVERT sourceCell="LOGIC" sourceFrag="BFRAG" destinationCell="LOGIC" destinationFrag="TFRAG">
+        <MAP sourcePort="BA1" destinationPort="TA1" />
+        <MAP sourcePort="BA2" destinationPort="TA2" />
+        <MAP sourcePort="BB1" destinationPort="TB1" />
+        <MAP sourcePort="BB2" destinationPort="TB2" />
+        <MAP sourcePort="BAS1" destinationPort="TAS1" />
+        <MAP sourcePort="BAS2" destinationPort="TAS2" />
+        <MAP sourcePort="BBS1" destinationPort="TBS1" />
+        <MAP sourcePort="BBS2" destinationPort="TBS2" />
+        <MAP sourcePort="BSL" destinationPort="TSL" />
+        <MAP sourcePort="BAB" destinationPort="TAB" />
+        <MAP sourcePort="CZ" destinationPort="TZ" />
+      </CONVERT>
+      <CONVERT sourceCell="LOGIC" sourceFrag="QFRAG" destinationCell="BIDIR" destinationFrag="PFRAG">
+        <MAP sourcePort="QDI"  destinationPort="OQI" />
+        <MAP sourcePort="QZ"  destinationPort="IQZ" />
+        <MAP sourcePort="QRT" destinationPort="IQR" />
+        <MAP sourcePort="QEN" destinationPort="IQE" />
+        <MAP sourcePort="QEN" destinationPort="OQE" />
+        <MAP sourcePort="QCK" destinationPort="IQC" />
+        <MAP sourcePort="QCKS" destinationPort="IQCS" />
+      </CONVERT>
+    </ONE_TO_ONE_CONVERSIONS>
+    <COMPOSITE_CONVERSIONS>
+      <!--<CONVERT sourceCell="LOGIC" sourceFrags="T0B0FRAG"  destinationCell="LOGIC" destinationFrags="T1B1FRAG">
+        <MAP sourceFrag="T0FRAG" destinationFrag="T1FRAG" />
+        <MAP sourceFrag="B0FRAG" destinationFrag="B1FRAG" />
+      </CONVERT>
+      <CONVERT sourceCell="LOGIC" sourceFrags="TFRAG" destinationCell="LOGIC" destinationFrags="BFRAG">
+        <MAP sourceFrag="" destinationFrag="" />
+        <MAP sourceFrag="" destinationFrag="" />
+      </CONVERT>
+      <CONVERT sourceCell="LOGIC" sourceFrags="TFRAG" destinationCell="LOGIC" destinationFrags="BFRAG">
+        <MAP sourceFrag="" destinationFrag="" />
+        <MAP sourceFrag="" destinationFrag="" />
+      </CONVERT>-->
+    </COMPOSITE_CONVERSIONS>
+  </CONVERSION_INFO>
+  <ALIAS_INFO>
+    <PORT_ALIASES>
+      <ALIAS name="COMMON_LUT_PORTS">
+        <PORT name="TBS" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="FLOP_DATA_CONTROL_PORT">
+        <PORT name="QDS" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="FLOP_DATAIN_PORT">
+        <PORT name="QDI" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="NOT_GND_PORTS">
+        <PORT name="QEN" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="NOT_VCC_PORTS">
+      </ALIAS>
+      <ALIAS name="NOT_DYNAMIC_PORTS">
+      </ALIAS>
+      <ALIAS name="LIBCELL_INT_PORTS_ACTION_SOURCE">
+	    <PORT name="QZ" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="LIBCELL_INT_PORTS_ACTION_DESTINATION">
+	    <PORT name="QDI" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="LIBCELL_COMMON_INT_PORTS">
+	    <PORT  name="F1" mcell="LOGIC" />
+	    <PORT  name="FS" mcell="LOGIC" />
+	    <PORT  name="F2" mcell="LOGIC" />
+	    <PORT  name="QEN" mcell="LOGIC" />
+	    <PORT  name="QCK" mcell="LOGIC" />
+	    <PORT  name="FZ" mcell="LOGIC" />
+	    <PORT  name="QDI" mcell="LOGIC" />
+	    <PORT  name="QCKS" mcell="LOGIC" />
+	    <PORT  name="QDS" mcell="LOGIC" />
+	    <PORT  name="QZ" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="LIBCELL_APC_INT_PORTS">
+	    <PORT  name="QST" mcell="LOGIC" />
+	    <PORT  name="QRT" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="LIBCELL_COMPOSITE_INT_PORTS_FIRST">
+	    <PORT name="QDI" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="LIBCELL_COMPOSITE_INT_PORTS_SECOND">
+        <PORT name="FZ" mcell="LOGIC" />
+      </ALIAS>
+      <ALIAS name="CLOCK_PORTS">
+	    <PORT name="IQC" mcell="BIDIR" />
+	    <PORT name="QCK" mcell="LOGIC" />
+	    <PORT name="CLK1_0" mcell="RAM" />
+        <PORT name="CLK1_1" mcell="RAM" />
+        <PORT name="CLK2_0" mcell="RAM" />
+        <PORT name="CLK2_1" mcell="RAM" />
+	    <PORT name="QCLKIN0" mcell="QMUX" />
+	    <PORT name="IC" mcell="GMUX" />
+	    <PORT name="IC" mcell="CAND" />
+      </ALIAS>
+      <ALIAS name="CLOCK_ENABLE_PORTS">
+        <PORT name="EN" mcell="CAND" />
+      </ALIAS>
+      <ALIAS name="GCLKBUF_INPUT_PORTS">
+	    <PORT name="IC" mcell="GMUX" />
+	    <PORT name="HSCKIN" mcell="QMUX" />
+      </ALIAS>
+    </PORT_ALIASES>
+    <CELL_ALIASES>
+      <ALIAS name="LIBCELL_INT_PORT">
+	    <CELL name="DFFSEC" />
+	    <CELL name="DFFSEP" />
+	    <CELL name="DFFSLE" />
+	    <CELL name="DFFSEP_APC" />
+	    <CELL name="DFFSEC_APC" />
+	    <CELL name="DFFSLE_APC" />
+      </ALIAS>
+      <ALIAS name="PULL_FLOPS">
+        <CELL name="dff" />
+        <CELL name="dffc" />
+        <CELL name="dffe" />
+        <!--<CELL name="dffec" />-->
+      </ALIAS>
+    </CELL_ALIASES>
+  </ALIAS_INFO>
+   <REALIZATION_INFO>
+    <PORT_REALIZATION>
+      <CELL name="GMUX">
+	      <REALIZE_PORT name="IP">
+	        <ASSIGN port="IS0" value="GND" />
+	        <ASSIGN port="IS1" value="GND" />
+        </REALIZE_PORT>
+        <REALIZE_PORT name="IC">
+	        <ASSIGN port="IS0" value="VCC" />
+	        <ASSIGN port="IS1" value="GND" />
+        </REALIZE_PORT>
+      </CELL>
+      <CELL name="QMUX">
+	      <REALIZE_PORT name="QCLKIN0">
+	        <ASSIGN port="IS0" value="GND" />
+	        <ASSIGN port="IS1" value="GND" />
+        </REALIZE_PORT>
+        <REALIZE_PORT name="HSCKIN">
+	        <ASSIGN port="IS0" value="VCC" />
+	        <ASSIGN port="IS1" value="VCC" />
+        </REALIZE_PORT>
+      </CELL>
+    </PORT_REALIZATION>
+    <DISABLE_REALIZATION>
+    </DISABLE_REALIZATION>
+  </REALIZATION_INFO>
+  <CONFIGURABLE_PORTS>
+    <CELL name="LOGIC">
+      <INPUT>
+        <PORT name="TA1" selectionPort="TAS1" />
+        <PORT name="TA2" selectionPort="TAS2" />
+        <PORT name="TB1" selectionPort="TBS1" />
+        <PORT name="TB2" selectionPort="TBS2" />
+        <PORT name="BA1" selectionPort="BAS1" />
+        <PORT name="BA2" selectionPort="BAS2" />
+        <PORT name="BB1" selectionPort="BBS1" />
+        <PORT name="BB2" selectionPort="BBS2" />
+      </INPUT>
+    </CELL>
+  </CONFIGURABLE_PORTS>
+  <INVERSION_RULES>
+    <RULE name="portInversion">
+      <CELL name="LOGIC">
+        <INVERT port="TA1" selectionPort="TAS1" signal="VCC" />
+        <INVERT port="TA2" selectionPort="TAS2" signal="VCC" />
+        <INVERT port="TB1" selectionPort="TBS1" signal="VCC" />
+        <INVERT port="TB2" selectionPort="TBS2" signal="VCC" />
+        <INVERT port="BA1" selectionPort="BAS1" signal="VCC" />
+        <INVERT port="BA2" selectionPort="BAS2" signal="VCC" />
+        <INVERT port="BB1" selectionPort="BBS1" signal="VCC" />
+        <INVERT port="BB2" selectionPort="BBS2" signal="VCC" />
+        <INVERT port="QCK" selectionPort="QCKS" signal="GND" />
+        <INVERT port="IQC" selectionPort="IQCS" signal="VCC" />
+      </CELL>
+    </RULE>
+  </INVERSION_RULES>
+</RULES>

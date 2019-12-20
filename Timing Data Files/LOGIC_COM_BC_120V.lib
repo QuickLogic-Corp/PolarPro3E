@@ -1,0 +1,1113 @@
+LOGIC3 cell QLAL3S2 kfactor 0.85
+
+PORT DELAY {
+	pin ( QST ) {
+		direction	: input ;
+		capacitance	: 0.0114864 ;
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_QCKS_1";
+			when : "QEN == 1'b1 && QRT == 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : removal_rising ;
+			intrinsic_fall : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_QCKS_0";
+			when : "QEN == 1'b1 && QRT == 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : removal_falling ;
+			intrinsic_fall : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_QCKS_1";
+			when : "QEN == 1'b1 && QRT == 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : recovery_rising ;
+			intrinsic_fall : 0.0937500 ;
+		}
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_QCKS_0";
+			when : "QEN == 1'b1 && QRT == 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : recovery_falling ;
+			intrinsic_fall : 0.0937500 ;
+		}
+	}
+	pin ( QDS ) {
+			direction	: input ;
+			capacitance	: 0.0119007 ;
+			timing() {
+				sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+				when : "QEN == 1'b1 && QRT == 1'b0 && QST == 1'b0 && QCKS == 1'b1";
+				related_pin : "QCK";
+				timing_type : hold_rising ;
+				intrinsic_rise : 0.0000000 ;
+				intrinsic_fall : 0.0000000 ;
+			}
+			timing() {
+				sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+				when : "QEN == 1'b1 && QRT == 1'b0 && QST == 1'b0 && QCKS == 1'b1";
+				related_pin : "QCK";
+				timing_type : setup_rising ;
+				intrinsic_rise : 0.2812500 ;
+				intrinsic_fall : 0.1875000 ;
+			}
+			timing() {
+				sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+				when : "QEN == 1'b1 && QRT == 1'b0 && QST == 1'b0 && QCKS == 1'b0";
+				related_pin : "QCK";
+				timing_type : hold_falling ;
+				intrinsic_rise : 0.0000000 ;
+				intrinsic_fall : 0.0000000 ;
+			}
+			timing() {
+				sdf_cond : "QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+				when : "QEN == 1'b1 && QRT == 1'b0 && QST == 1'b0 && QCKS == 1'b0";
+				related_pin : "QCK";
+				timing_type : setup_falling ;
+				intrinsic_rise : 0.2812500 ;
+				intrinsic_fall : 0.1875000 ;
+			}
+	}
+	pin ( TBS ) {
+		direction	: input ;
+		capacitance	: 0.0111325;
+		timing() {
+			sdf_cond : "QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.1108000 ;
+			intrinsic_fall : 0.2861820 ;
+		}
+		timing() {
+			sdf_cond : "QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.2983000 ;
+			intrinsic_fall : 0.5670920 ;
+		}
+		timing() {
+			sdf_cond : "QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.1108000 ;
+			intrinsic_fall : 0.2861820 ;
+		}
+		timing() {
+			sdf_cond : "QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.2983000 ;
+			intrinsic_fall : 0.5670920 ;
+		}
+	}
+	pin ( TAB ) {
+		direction	: input ;
+		capacitance	: 0.0060841;
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.1953020 ;
+			intrinsic_fall : 0.2521480 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.3828020 ;
+			intrinsic_fall : 0.5330580 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.1953020 ;
+			intrinsic_fall : 0.2521480 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.3828020 ;
+			intrinsic_fall : 0.5330580 ;
+		}
+	}
+	pin ( TSL ) {
+		direction	: input ;
+		capacitance	: 0.0096090;
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_EQ_1";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3365490 ;
+			intrinsic_fall : 0.3921170 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_EQ_1";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5240490 ;
+			intrinsic_fall : 0.6730270 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_EQ_0";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3365490 ;
+			intrinsic_fall : 0.3921170 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_EQ_0";
+			when : "TBS == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS== 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5240490 ;
+			intrinsic_fall : 0.6730270 ;
+		}
+	}
+	pin ( TAS1 ) 
+	{
+		direction	: input ;
+		capacitance	: 0.0059735;
+	}
+	pin ( TA1 ) 
+	{
+		direction	: input ;
+		capacitance	: 0.0059735;
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3406560 ;
+			intrinsic_fall : 0.3918860 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5281560 ;
+			intrinsic_fall : 0.6727960 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3406560 ;
+			intrinsic_fall : 0.3918860 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5281560 ;
+			intrinsic_fall : 0.6727960 ;
+		}
+		
+		
+	}
+	pin ( TAS2 ) 
+	{
+		direction	: input ;
+		capacitance	: 0.0056801;
+	}
+	pin ( TA2 ) {
+		direction	: input ;
+		capacitance	: 0.0056801;
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3407390 ;
+			intrinsic_fall : 0.3919020 ;
+		}
+		timing(){
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5282390 ;
+			intrinsic_fall : 0.6728120 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3407390 ;
+			intrinsic_fall : 0.3919020 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_0_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5282390 ;
+			intrinsic_fall : 0.6728120 ;
+		}
+	}
+	
+	pin ( TBS1 ) {
+		direction	: input ;
+		capacitance	: 0.0064186;
+	}
+	pin ( TB1 ) {
+		direction	: input ;
+		capacitance	: 0.0064186;
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3411180 ;
+			intrinsic_fall : 0.3915720 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5286180 ;
+			intrinsic_fall : 0.6724820 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3411180 ;
+			intrinsic_fall : 0.3915720 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5286180 ;
+			intrinsic_fall : 0.6724820 ;
+		}
+	}
+	pin ( TBS2 ) {
+			direction	: input ;
+			capacitance	: 0.0071760;
+	}
+	pin ( TB2 ) {
+		direction	: input ;
+		capacitance	: 0.0071760;
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3410130 ;
+			intrinsic_fall : 0.3915400 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5285130 ;
+			intrinsic_fall : 0.6724500 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3410130 ;
+			intrinsic_fall : 0.3915400 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_0_AN_TAB_EQ_1_AN_TSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5285130 ;
+			intrinsic_fall : 0.6724500 ;
+		}
+	}
+	pin ( BAB ) {
+		direction	: input ;
+		capacitance	: 0.0076058;
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.1671930 ;
+			intrinsic_fall : 0.2434570 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.3546930 ;
+			intrinsic_fall : 0.5243670 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.1671930 ;
+			intrinsic_fall : 0.2434570 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.3546930 ;
+			intrinsic_fall : 0.5243670 ;
+		}
+	}
+	pin ( BSL ) {
+		direction	: input ;
+		capacitance	: 0.0074958;
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3084480 ;
+			intrinsic_fall : 0.3834310 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0&& QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.4959480 ;
+			intrinsic_fall : 0.6643410 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3084480 ;
+			intrinsic_fall : 0.3834310 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "TBS == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0&& QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.4959480 ;
+			intrinsic_fall : 0.6643410 ;
+		}
+	}
+	
+	pin ( BAS1 ) {
+		direction	: input ;
+		capacitance	: 0.0066642;
+	}
+	
+	pin ( BA1 ) 
+	{
+		direction	: input ;
+		capacitance	: 0.0066642;
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3118000 ;
+			intrinsic_fall : 0.3829710 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.4993000 ;
+			intrinsic_fall : 0.6638810 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3118000 ;
+			intrinsic_fall : 0.3829710 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.4993000 ;
+			intrinsic_fall : 0.6638810 ;
+		}
+	}
+	pin ( BAS2 ) {
+		direction	: input ;
+		capacitance	: 0.0036234;
+	}
+	pin ( BA2 ) {
+		direction	: input ;
+		capacitance	: 0.0036234;
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3117960 ;
+			intrinsic_fall : 0.3831150 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.4992960 ;
+			intrinsic_fall : 0.6640250 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3117960 ;
+			intrinsic_fall : 0.3831150 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_0_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.4992960 ;
+			intrinsic_fall : 0.6640250 ;
+		}
+	}
+	pin ( BBS1 ) {
+		direction	: input ;
+		capacitance	: 0.0038205;
+	}
+
+	pin ( BB1 ) {
+		direction	: input ;
+		capacitance	: 0.0038205;
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3128370 ;
+			intrinsic_fall : 0.3822470 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5003370 ;
+			intrinsic_fall : 0.6631570 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3128370 ;
+			intrinsic_fall : 0.3822470 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_0_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5003370 ;
+			intrinsic_fall : 0.6631570 ;
+		}
+
+	}
+	pin ( BBS2 ) {
+		direction	: input ;
+		capacitance	: 0.0036336;
+	}
+	pin ( BB2 ) {
+		direction	: input ;
+		capacitance	: 0.0036336;
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.3127410 ;
+			intrinsic_fall : 0.3823950 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1" ;
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.5002410 ;
+			intrinsic_fall : 0.6633050 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.3127410 ;
+			intrinsic_fall : 0.3823950 ;
+		}
+		timing() {
+			sdf_cond : "TBS_EQ_1_AN_BAB_EQ_1_AN_BSL_EQ_1_AN_QDS_EQ_0_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && QDS == 1'b0 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0" ;
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.5002410 ;
+			intrinsic_fall : 0.6633050 ;
+		}
+	}
+	pin ( QDI ) {
+		direction	: input ;
+		capacitance	: 0.0118979 ;
+		timing() {
+			sdf_cond : "QDS_EQ_1_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "QDS == 1'b1 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.0000000 ;
+			intrinsic_fall : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QDS_EQ_1_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "QDS == 1'b1 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 0.2812500 ;
+			intrinsic_fall : 0.2812500 ;
+		}
+		timing() {
+			sdf_cond : "QDS_EQ_1_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "QDS == 1'b1 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.0000000 ;
+			intrinsic_fall : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QDS_EQ_1_AN_QEN_EQ_1_AN_QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "QDS == 1'b1 && QEN == 1'b1 && QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 0.2812500 ;
+			intrinsic_fall : 0.2812500 ;
+		}
+	}
+	pin ( QEN ) {
+		direction	: input ;
+		capacitance	: 0.0118973 ;
+		timing() {
+			sdf_cond : "QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : hold_rising ;
+			intrinsic_rise : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QRT_EQ_0_AN_QST_EQ_0_QCKS_1";
+			when : "QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : setup_rising ;
+			intrinsic_rise : 1.0312500 ;
+		}
+		timing() {
+			sdf_cond : "QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : hold_falling ;
+			intrinsic_rise : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QRT_EQ_0_AN_QST_EQ_0_QCKS_0";
+			when : "QRT == 1'b0 && QST== 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : setup_falling ;
+			intrinsic_rise : 1.0312500 ;
+		}
+	}
+	pin ( QCKS ) {
+		direction	: input ;
+		capacitance	: 0.0355592 ;
+	}
+
+
+	pin ( QCK ) {
+		direction	: input ;
+		capacitance	: 0.0190321 ;
+	}
+
+
+	pin ( QRT ) {
+		direction	: input ;
+		capacitance	: 0.0114891 ;
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QST_EQ_0_QCKS_1";
+			when : "QEN == 1'b1 && QST == 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : recovery_rising ;
+			intrinsic_fall : 0.1875000 ;
+		}
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QST_EQ_0_QCKS_0";
+			when : "QEN == 1'b1 && QST == 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : recovery_falling ;
+			intrinsic_fall : 0.1875000 ;
+		}
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QST_EQ_0_QCKS_1";
+			when : "QEN == 1'b1 && QST == 1'b0 && QCKS == 1'b1";
+			related_pin : "QCK";
+			timing_type : removal_rising ;
+			intrinsic_fall : 0.0000000 ;
+		}
+		timing() {
+			sdf_cond : "QEN_EQ_1_AN_QST_EQ_0_QCKS_0";
+			when : "QEN == 1'b1 && QST == 1'b0 && QCKS == 1'b0";
+			related_pin : "QCK";
+			timing_type : removal_falling ;
+			intrinsic_fall : 0.0000000 ;
+		}
+		timing() {
+			related_pin : "QST";
+			timing_type : recovery_falling ;
+			intrinsic_fall : 0.2812500 ;
+		}
+		timing() {
+			related_pin : "QST";
+			timing_type : removal_falling ;
+			intrinsic_fall : 0.0000000 ;
+		}
+	}
+	pin ( F1 ) {
+		direction	: input ;
+		capacitance	: 0.0036057;
+	}
+	pin ( F2 ) {
+		direction	: input ;
+		capacitance	: 0.0039172;
+	}
+	pin ( FS ) {
+		direction	: input ;
+		capacitance	: 0.0044262;
+	}
+	
+	pin ( TZ ) {
+		direction	: output;
+		capacitance	: 0.00;
+		timing() {
+			related_pin : "TAB" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.4108 ;
+			fall_transition : 0.4359;
+			intrinsic_fall : 0.5032 ;
+			intrinsic_rise : 0.4146 ;
+		}
+		timing() {
+			related_pin : "TSL" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.3779 ;
+			fall_transition : 0.4019 ;
+			intrinsic_fall : 0.5288 ;
+			intrinsic_rise : 0.4373 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b1" ;
+			when : "TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b1" ;
+			related_pin : "TA1" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.3198 ;
+			fall_transition : 0.3375 ;
+			intrinsic_fall : 0.5093 ;
+			intrinsic_rise : 0.4759 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b0" ;
+			when : "TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b0" ;
+			related_pin : "TA1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.3175 ;
+			fall_transition : 0.3368 ;
+			intrinsic_fall : 0.5398 ;
+			intrinsic_rise : 0.5049 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b1" ;
+			when : "TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b1" ;
+			related_pin : "TA2" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.3929 ;
+			fall_transition : 0.4214 ;
+			intrinsic_fall : 0.6466 ;
+			intrinsic_rise : 0.5699 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b0" ;
+			when : "TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b0" ;
+			related_pin : "TA2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.3917 ;
+			fall_transition : 0.4226 ;
+			intrinsic_fall : 0.6822 ;
+			intrinsic_rise : 0.6164 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b1" ;
+			when : "TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b1" ;
+			related_pin : "TB1" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4071 ;
+			fall_transition : 0.4368 ;
+			intrinsic_fall : 0.6993 ;
+			intrinsic_rise : 0.6166 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b0" ;
+			when : "TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b0" ;
+			related_pin : "TB1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4054 ;
+			fall_transition : 0.4266 ;
+			intrinsic_fall : 0.7181 ;
+			intrinsic_rise : 0.6428 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b1" ;
+			when : "TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b1" ;
+			related_pin : "TB2" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.3932 ;
+			fall_transition : 0.4166 ;
+			intrinsic_fall : 0.6140 ;
+			intrinsic_rise : 0.5617 ;
+		}
+		timing() {
+			sdf_cond : "TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b0" ;
+			when : "TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b0" ;
+			related_pin : "TB2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.3925 ;
+			fall_transition : 0.4177 ;
+			intrinsic_fall : 0.6339 ;
+			intrinsic_rise : 0.5864 ;
+		}
+	}
+	
+	pin ( CZ ) {
+		direction	: output ;
+		capacitance	: 0.00 ;
+		timing() {
+			related_pin : "TBS" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.5953 ;
+			fall_transition : 0.5895 ;
+			intrinsic_fall : 0.5134 ;
+			intrinsic_rise : 0.4478 ;
+		}
+		timing() {
+			related_pin : "TBS" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.607 ;
+			fall_transition : 0.607 ;
+			intrinsic_fall : 0.5001 ;
+			intrinsic_rise : 0.4768 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0" ;
+			when : "TBS == 1'b0" ;
+			related_pin : "TAB" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.5193 ;
+			fall_transition : 0.5366 ;
+			intrinsic_fall : 0.5989 ;
+			intrinsic_rise : 0.4903 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0" ;
+			when : "TBS == 1'b0" ;
+			related_pin : "TSL" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.5193 ;
+			fall_transition : 0.5373 ;
+			intrinsic_fall : 0.6705 ;
+			intrinsic_rise : 0.5498 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b1" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b1" ;
+			related_pin : "TA1" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4976 ;
+			fall_transition : 0.5102 ;
+			intrinsic_fall : 0.7264 ;
+			intrinsic_rise : 0.6654 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0  && TAS1 == 1'b0" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b0 && TAS1 == 1'b0" ;
+			related_pin : "TA1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4975 ;
+			fall_transition : 0.5116 ;
+			intrinsic_fall : 0.7631 ;
+			intrinsic_rise : 0.7007 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b1" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b1" ;
+			related_pin : "TA2" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4972 ;
+			fall_transition : 0.5165 ;
+			intrinsic_fall : 0.7398 ;
+			intrinsic_rise : 0.6415 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b0" ;
+			when : "TBS == 1'b0 && TAB == 1'b0 && TSL == 1'b1 && TAS2 == 1'b0" ;
+			related_pin : "TA2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4974 ;
+			fall_transition : 0.5183 ;
+			intrinsic_fall : 0.7748 ;
+			intrinsic_rise : 0.6879 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b1" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b1" ;
+			related_pin : "TB1" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4996 ;
+			fall_transition : 0.5193 ;
+			intrinsic_fall : 0.7711 ;
+			intrinsic_rise : 0.6702 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b0" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b0 && TBS1 == 1'b0" ;
+			related_pin : "TB1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4996 ;
+			fall_transition : 0.5202 ;
+			intrinsic_fall : 0.7888 ;
+			intrinsic_rise : 0.696 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b1" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b1" ;
+			related_pin : "TB2" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4981 ;
+			fall_transition : 0.5143 ;
+			intrinsic_fall : 0.7042 ;
+			intrinsic_rise : 0.6322 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b0" ;
+			when : "TBS == 1'b0 && TAB == 1'b1 && TSL == 1'b1 && TBS2 == 1'b0" ;
+			related_pin : "TB2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4992 ;
+			fall_transition : 0.5156 ;
+			intrinsic_fall : 0.7238 ;
+			intrinsic_rise : 0.6570 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1" ;
+			when : "TBS == 1'b1" ;
+			related_pin : "BAB" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.4738 ;
+			fall_transition : 0.4756 ;
+			intrinsic_fall : 0.4518 ;
+			intrinsic_rise : 0.3825 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1" ;
+			when : "TBS == 1'b1" ;
+			related_pin : "BSL" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.4792 ;
+			fall_transition : 0.4770 ;
+			intrinsic_fall : 0.5178 ;
+			intrinsic_rise : 0.4431 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && BAS1 == 1'b1" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && BAS1 == 1'b1" ;
+			related_pin : "BA1" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4738 ;
+			fall_transition : 0.4639 ;
+			intrinsic_fall : 0.5993 ;
+			intrinsic_rise : 0.5622 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && BAS1 == 1'b0" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b0 && BAS1 == 1'b0" ;
+			related_pin : "BA1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4744 ;
+			fall_transition : 0.4625 ;
+			intrinsic_fall : 0.6248 ;
+			intrinsic_rise : 0.5891 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && BAS2 == 1'b1" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && BAS2 == 1'b1" ;
+			related_pin : "BA2" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4632 ;
+			fall_transition : 0.4493 ;
+			intrinsic_fall : 0.5494 ;
+			intrinsic_rise : 0.5033 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && BAS2 == 1'b0" ;
+			when : "TBS == 1'b1 && BAB == 1'b0 && BSL == 1'b1 && BAS2 == 1'b0" ;
+			related_pin : "BA2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4599 ;
+			fall_transition : 0.4511 ;
+			intrinsic_fall : 0.5813 ;
+			intrinsic_rise : 0.5409 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && BBS1 == 1'b1" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && BBS1 == 1'b1" ;
+			related_pin : "BB1" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4578 ;
+			fall_transition : 0.4547 ;
+			intrinsic_fall : 0.5671 ;
+			intrinsic_rise : 0.5203 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && BBS1 == 1'b0" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b0 && BBS1 == 1'b0" ;
+			related_pin : "BB1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4587 ;
+			fall_transition : 0.4556 ;
+			intrinsic_fall : 0.5910 ;
+			intrinsic_rise : 0.5516 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && BBS2 == 1'b1" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && BBS2 == 1'b1" ;
+			related_pin : "BB2" ;
+			timing_sense : negative_unate ;
+			rise_transition : 0.4655 ;
+			fall_transition : 0.4516 ;
+			intrinsic_fall : 0.5678 ;
+			intrinsic_rise : 0.5202 ;
+		}
+		timing() {
+			sdf_cond : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && BBS2 == 1'b0" ;
+			when : "TBS == 1'b1 && BAB == 1'b1 && BSL == 1'b1 && BBS2 == 1'b0" ;
+			related_pin : "BB2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.4644 ;
+			fall_transition : 0.4550 ;
+			intrinsic_fall : 0.5938 ;
+			intrinsic_rise : 0.5518 ;
+		}
+		
+		
+	}
+	pin ( QZ ) {
+			direction	: output ;
+			capacitance	: 0.0000000 ;
+			timing() {
+				related_pin : "QRT";
+				timing_sense : negative_unate ;
+				rise_transition : 0.0609980 ;
+				fall_transition : 0.0875490 ;
+				intrinsic_fall : 0.8246270 ;
+				intrinsic_rise : 0.5981910 ;
+			}
+			timing() {
+				when : "QCKS == 1'b1" ;
+				related_pin : "QCK";
+				timing_type : rising_edge ;
+				rise_transition : 0.0350070 ;
+				fall_transition : 0.0526890 ;
+				intrinsic_fall : 0.632943 ;
+				intrinsic_rise : 0.575982 ;
+			}
+			timing() {
+				when : "QCKS == 1'b0" ;
+				related_pin : "QCK";
+				timing_type : falling_edge ;
+				rise_transition : 0.0350070 ;
+				fall_transition : 0.0526890 ;
+				intrinsic_fall : 0.632943 ;
+				intrinsic_rise : 0.575982 ;
+			}
+			timing() {
+				related_pin : "QST";
+				timing_type : combinational ;
+				timing_sense : positive_unate ;
+				rise_transition : 0.0569790 ;
+				intrinsic_rise : 0.7303700 ;
+			}
+	}
+	
+	pin ( FZ ) 
+	{
+		direction	: output ;
+		capacitance	: 0.00 ;
+		timing() {
+			sdf_cond : "FS == 1'b0" ;
+			when : "FS == 1'b0" ;
+			related_pin : "F1" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.2785 ;
+			fall_transition : 0.2429 ;
+			intrinsic_fall : 0.1993 ;
+			intrinsic_rise : 0.2204 ;
+		}
+		timing() {
+			sdf_cond : "FS == 1'b1" ;
+			when : "FS == 1'b1" ;
+			related_pin : "F2" ;
+			timing_sense : positive_unate ;
+			rise_transition : 0.2742 ;
+			fall_transition : 0.2430 ;
+			intrinsic_fall : 0.1978 ;
+			intrinsic_rise : 0.2113 ;
+		}
+		timing() {
+			related_pin : "FS" ;
+			timing_sense : non_unate ;
+			rise_transition : 0.2310 ;
+			fall_transition : 0.2018 ;
+			intrinsic_fall : 0.1978 ;
+			intrinsic_rise : 0.2169 ;
+		}
+	}
+	
+}
