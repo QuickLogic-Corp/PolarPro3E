@@ -21,10 +21,10 @@ PORT DELAY {
         direction   : input ;
         capacitance : 0.000 ;
       }
-      pin ( IQIN ) {
+      /* pin ( IQIN ) {
         direction   : input ;
         capacitance : 0.000 ;
-      }
+      } */
       pin ( IQCS ) {
         direction   : input ;
         capacitance : 0.000 ;
